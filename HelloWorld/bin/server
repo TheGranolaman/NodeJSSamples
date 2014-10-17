@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+//require module name. must be exported in your app.js
+var debug = require('debug')('HelloWorld');
+var app = require('../myapp');
+
+//3000 is the port thats usually used
+app.set('port', process.env.PORT || 3000);
+
+//tell the server where to listen
+var server = app.listen(app.get('port'), function() {
+	//callback function. Best to leave this debug statement
+  debug('Express server listening on port ' + server.address().port);
+});

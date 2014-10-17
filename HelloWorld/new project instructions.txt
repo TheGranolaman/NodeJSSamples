@@ -1,0 +1,37 @@
+node js instructions 
+
+-install node js
+-install mongodb 
+-head to your mongo db folder in program files, then bin folder
+-start up mongo with command mongodb --dbpath="location where you want your db to store stuff" --port "the port, maybe 3000" - dont leave quotes
+
+-create a folder where you want node js project
+-in it create a structure that looks like:
+	package.json(file for project specifications like module name, module versions, dependencies etc)
+	views(folder for your html code)
+	public(folder for your non node js stuff like css, javascript and and images you might use in your app)
+	bin(folder for the server. Express uses this to hold the www file)
+	routes(folder for js files that contain the routes that will be used in this project)
+-Package.json will have something like:
+	{
+		"name" : "module name" (required),
+		"description" : "a description",
+		"version" : "module version" (required),
+		"scripts" : {
+						"start" : "node ./bin/www" //npm specific scripts that you can run. this for example runs the www file which starts the server
+					}, 
+		"dependencies" : {
+							"express" : "latest",
+							"mongoose":"latest",
+							"mongodb" :"~2.0",
+							"debug": "~2.0.0"
+						}
+	}
+	
+-run command npm install mongoose // this installs mongoose module to help with mongodb
+-run command npm install //this will install dependencies in package.json that are not npm specific. Mongoose is outside module 
+						 //which is why we had to install separate. It installs it own mongodb driver but bc our package.json file
+						 //has a specific version listed, it will use that of mongodb driver
+						 
+-code away
+-run command npm start to start the server if you have the "start" script in package.json, otherwise use node "path to your server"
