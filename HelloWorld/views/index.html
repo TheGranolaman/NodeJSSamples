@@ -2,14 +2,24 @@
 	<title>My Contacts</title>
 	<head>
 		<!-- Bootstrap core CSS -->
-		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="../public/css/bootstrap.css">
 
 		<!--Scripts to be loaded, using asynch-->
-		<script type="text/javascript" src="../public/js/bootstrap.min.js" asynch></script>
-		<script type="text/javascript" src="../public/js/jquery-1.11.1.js" asycnh></script>
-		<script type="text/javascript" src="../public/js/jquery-ui.min.js" asynch></script>
+		<script type="text/javascript" src="/public/js/bootstrap.min.js" asynch></script>
+		<script type="text/javascript" src="public/js/jquery-1.11.1.js" asycnh></script>
+		<script type="text/javascript" src="../../public/js/jquery-ui.min.js" asynch></script>
 	</head>
 	<body>
-		<div id='main-body'></div>
+		<div id='main-body' style='height:100vh;background:rgb(141, 246, 255)'>
+			<h1>Add User</h1>
+			<div>
+				<form name= "AddUser" method = "post" action="/adduser">
+					Name: <input type="text" name= "username"><br>
+					Age: <input type="text" name="age"><br>
+					Email Address: <input type="text" name="email"><br>
+					<input type="button" value="Submit">
+				</form>
+			</div>
+		</div>
 	</body>
 </HTML>
